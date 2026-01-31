@@ -1,0 +1,36 @@
+﻿body {
+    font-family: Times New Roman, Times New Roman, serif;
+    margin: 40px;
+    background-color: #f3edb9;
+    color: blue;
+}
+
+.wrap {
+    margin:0 auto;
+    width: 800px;
+}
+
+section {
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+button {
+    padding: 6px 12px;
+    margin-top: 10px;
+}
+
+#komunikat {
+    font-weight: bold;
+}
+
+.niedostepny {
+    color: gray;
+    text-decoration: line-through;
+}
