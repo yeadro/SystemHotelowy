@@ -1,0 +1,12 @@
+[
+  {
+    "Id": "68e14e3d-d0d1-4bf3-9dc0-c1dc451b5782",
+    "PokojId": 2,
+    "Gosc": {
+      "Imie": "meow",
+      "Nazwisko": "meowmeow"
+    },
+    "DataOd": "2021-05-04T00:00:00",
+    "DataDo": "2027-01-27T00:00:00"
+  }
+]

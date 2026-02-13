@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>System rezerwacji hotelu</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .admin-link {
+            float: right;
+            text-decoration: none;
+            color: #333;
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        .admin-link:hover { background-color: #e0e0e0; }
+
+        .filters {
+            background: #f4f4f4;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .niedostepny {
+            color: red;
+            text-decoration: line-through;
+            background-color: #ffe6e6;
+        }
+
+        .wybierz-btn {
+            margin-left: 10px;
+            padding: 2px 8px;
+            background-color: #4c60af;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <a href="login.html" class="admin-link">Panel Administratora</a>
+
+    <h1>System rezerwacji hotelu</h1>
+
+    <section>
+        <h2>Sprawdź dostępność pokoi</h2>
+
+        <label>Data od:
+            <input type="date" id="dataOd">
+        </label>
+
+        <label>Data do:
+            <input type="date" id="dataDo">
+        </label>
+
+        <button onclick="sprawdzPokoje()">Sprawdź</button>
+    </section>
+
+    <section>
+        <h2>Dostępne pokoje</h2>
+
+        <div class="filters">
+            <label>Sortuj:
+                <select id="sortowanie" onchange="przerysujPokoje()">
+                    <option value="cena_rosnaco">Cena: rosnąco</option>
+                    <option value="cena_malejaco">Cena: malejąco</option>
+                    <option value="miejsca_malejaco">Miejsca: malejąco</option>
+                </select>
+            </label>
+
+            <label>Max cena:
+                <input type="number" id="filtrCena" placeholder="np. 400" oninput="przerysujPokoje()" style="width: 80px;"> zł
+            </label>
+        </div>
+
+        <ul id="listaPokoi"></ul>
+    </section>
+
+    <section>
+        <h2>Zarezerwuj pokój</h2>
+
+        <input type="text" id="imie" placeholder="Imię">
+        <input type="text" id="nazwisko" placeholder="Nazwisko">
+        <input type="number" id="pokojId" placeholder="ID pokoju">
+
+        <div style="margin-top: 10px;">
+            <label>
+                <input type="checkbox" id="sniadanie">
+                <strong>Zamawiam śniadanie (+30 zł/doba)</strong>
+            </label>
+        </div>
+
+        <p id="cena"></p>
+
+        <button onclick="zarezerwuj()">Zarezerwuj</button>
+    </section>
+
+    <p id="komunikat"></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

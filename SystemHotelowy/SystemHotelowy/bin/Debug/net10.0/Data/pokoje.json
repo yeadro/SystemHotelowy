@@ -1,0 +1,32 @@
+[
+  {
+    "TypPokoju": "dwojka",
+    "Id": 1,
+    "Numer": 101,
+    "LiczbaMiejsc": 0
+  },
+  {
+    "TypPokoju": "jedynka",
+    "Id": 2,
+    "Numer": 102,
+    "LiczbaMiejsc": 1
+  },
+  {
+    "TypPokoju": "dwojka",
+    "Id": 3,
+    "Numer": 103,
+    "LiczbaMiejsc": 2
+  },
+  {
+    "TypPokoju": "dwojka",
+    "Id": 4,
+    "Numer": 104,
+    "LiczbaMiejsc": 0
+  },
+  {
+    "TypPokoju": "jedynka",
+    "Id": 5,
+    "Numer": 105,
+    "LiczbaMiejsc": 1
+  }
+]

@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Administratora</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .admin-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .btn { padding: 8px 12px; cursor: pointer; border: none; color: white; margin-right: 5px; border-radius: 4px; }
+        .danger-btn { background-color: #ff4444; }
+        .edit-btn { background-color: #4CAF50; }
+        .save-btn { background-color: #4c60af; }
+        .cancel-btn { background-color: #999; }
+        .logout-btn { float: right; background: #555; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+
+        .form-box { background: #eee; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+        .form-box.edit-mode { background: #e3f2fd; border: 2px solid #2196F3; }
+
+        input, select { padding: 8px; margin-right: 5px; }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <button class="btn logout-btn" onclick="wyloguj()">Wyloguj</button>
+    <h1>Panel Administratora</h1>
+
+    <div class="admin-panel">
+        <section>
+            <h2>Zarządzanie Pokojami</h2>
+
+            <div id="formularzPokoju" class="form-box">
+                <h3 id="formHeader" style="margin-top: 0;">Dodaj nowy pokój</h3>
+
+                <input type="hidden" id="editId">
+
+                <label>Numer: <input type="number" id="nrPokoju" placeholder="np. 101"></label>
+                <br><br>
+                <label>Typ:
+                    <select id="typPokoju">
+                        <option value="jedynka">Jednoosobowy</option>
+                        <option value="dwojka">Dwuosobowy</option>
+                        <option value="apartament">Apartament</option>
+                    </select>
+                </label>
+                <br><br>
+
+                <button id="submitBtn" class="btn save-btn" onclick="zapiszPokoj()">Dodaj Pokój</button>
+                <button id="cancelBtn" class="btn cancel-btn" style="display: none;" onclick="anulujEdycje()">Anuluj</button>
+            </div>
+
+            <table id="tabelaPokoje">
+                <thead>
+                <tr>
+                    <th>Numer</th>
+                    <th>Typ</th>
+                    <th>Akcje</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Wszystkie Rezerwacje</h2>
+            <button class="btn edit-btn" onclick="ladowanieRezerwacji()">Odśwież listę</button>
+            <table id="tabelaRezerwacje">
+                <thead>
+                <tr>
+                    <th>Pokój</th>
+                    <th>Gość</th>
+                    <th>Termin</th>
+                    <th>Śniadanie</th>
+                    <th>Akcja</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </div>
+</div>
+<script src="admin.js"></script>
+</body>
+</html>

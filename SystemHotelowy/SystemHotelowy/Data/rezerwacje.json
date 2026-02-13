@@ -1,0 +1,24 @@
+[
+  {
+    "Id": "5c0148f0-089a-4f5a-803b-469a88299e9b",
+    "PokojId": 6,
+    "Gosc": {
+      "Imie": "Jan",
+      "Nazwisko": "Nowak"
+    },
+    "DataOd": "2026-02-13T00:00:00",
+    "DataDo": "2026-02-16T00:00:00",
+    "Sniadanie": true
+  },
+  {
+    "Id": "cb9681b0-c743-4f71-b18a-3a92d560b2b9",
+    "PokojId": 5,
+    "Gosc": {
+      "Imie": "Anna",
+      "Nazwisko": "Kowalska"
+    },
+    "DataOd": "2026-02-13T00:00:00",
+    "DataDo": "2026-02-18T00:00:00",
+    "Sniadanie": false
+  }
+]
